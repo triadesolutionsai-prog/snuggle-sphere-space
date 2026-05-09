@@ -16,7 +16,8 @@ import {
   FileText,
   CreditCard,
   Building2,
-  Calendar
+  Calendar,
+  MoreVertical
 } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";

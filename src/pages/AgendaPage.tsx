@@ -12,7 +12,8 @@ import {
   CheckCircle2,
   Clock3,
   XCircle,
-  Video
+  Video,
+  Phone
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { format, addDays, startOfWeek, addHours } from "date-fns";
