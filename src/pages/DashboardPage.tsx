@@ -10,6 +10,7 @@ import {
   MessageCircle
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 
 const KPICard = ({ title, value, icon: Icon, trend }: any) => (
   <Card className="border-none shadow-sm">
