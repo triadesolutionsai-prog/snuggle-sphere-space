@@ -209,7 +209,7 @@ export default function DashboardPage() {
                   <p className="text-sm font-medium text-red-900">{product.name}</p>
                   <p className="text-xs text-red-700">Apenas {product.quantity} unidades restantes</p>
                 </div>
-                <Button size="xs" variant="link" className="text-red-700 p-0 text-xs font-bold">Repor</Button>
+                <Button size="sm" variant="link" className="text-red-700 p-0 text-xs font-bold">Repor</Button>
               </div>
             ))}
             {state.products.filter(p => p.quantity <= p.minQuantity).length === 0 && (
