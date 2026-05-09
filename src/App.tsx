@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import { MemoryRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { AppProvider, useApp } from '@/context/AppContext';
 import LoginPage from '@/pages/LoginPage';
 import DashboardPage from '@/pages/DashboardPage';
@@ -12,6 +12,11 @@ import { AuthenticatedLayout } from '@/components/AuthenticatedLayout';
 const ProtectedRoute = ({ children }: { children: React.ReactNode }) => {
   const { state } = useApp();
   return state.isAuthenticated ? <AuthenticatedLayout>{children}</AuthenticatedLayout> : <Navigate to="/auth" />;
+};
+
+const AuthRoute = () => {
+  const { state } = useApp();
+  return state.isAuthenticated ? <Navigate to="/" /> : <LoginPage />;
 };
 
 const PlaceholderPage = ({ title }: { title: string }) => (
@@ -34,9 +39,9 @@ export default function App() {
 
   return (
     <AppProvider>
-      <Router>
+      <Router initialEntries={[window.location.pathname]}>
         <Routes>
-          <Route path="/auth" element={<LoginPage />} />
+          <Route path="/auth" element={<AuthRoute />} />
           
           <Route path="/" element={<ProtectedRoute><DashboardPage /></ProtectedRoute>} />
           <Route path="/dashboard" element={<ProtectedRoute><DashboardPage /></ProtectedRoute>} />
