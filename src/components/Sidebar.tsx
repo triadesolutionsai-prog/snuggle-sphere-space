@@ -66,7 +66,7 @@ const SidebarItem = ({ icon: Icon, label, href, collapsed, subItems, role }: Sid
               to={sub.href}
               className={cn(
                 "block py-1 text-sm transition-colors",
-                location.pathname === sub.href ? "text-[#D4AF37]" : "text-gray-500 hover:text-white"
+                location.pathname === sub.href ? "text-gold" : "text-gray-500 hover:text-white"
               )}
             >
               {sub.label}
@@ -116,11 +116,11 @@ export function Sidebar({ collapsed, setCollapsed }: { collapsed: boolean; setCo
 
   return (
     <aside className={cn(
-      "bg-[#001F3F] text-white flex flex-col h-screen transition-all duration-300 relative",
+      "bg-navy text-white flex flex-col h-screen transition-all duration-300 relative",
       collapsed ? "w-16" : "w-64"
     )}>
       <div className="p-4 flex items-center gap-3 border-b border-white/10">
-        <div className="w-8 h-8 rounded bg-[#D4AF37] flex items-center justify-center font-serif font-bold text-navy flex-shrink-0">RM</div>
+        <div className="w-8 h-8 rounded bg-gold flex items-center justify-center font-serif font-bold text-navy flex-shrink-0">RM</div>
         {!collapsed && (
           <div className="overflow-hidden">
             <h1 className="font-serif font-bold tracking-tight whitespace-nowrap">CLÍNICA RM</h1>
@@ -168,7 +168,7 @@ export function Sidebar({ collapsed, setCollapsed }: { collapsed: boolean; setCo
       <Button
         variant="ghost"
         size="icon"
-        className="absolute -right-3 top-20 w-6 h-6 rounded-full bg-[#D4AF37] text-white hover:bg-[#B8962E] hidden md:flex items-center justify-center"
+        className="absolute -right-3 top-20 w-6 h-6 rounded-full bg-gold text-navy hover:bg-gold/90 hidden md:flex items-center justify-center"
         onClick={() => setCollapsed(!collapsed)}
       >
         <ChevronLeft className={cn("w-4 h-4 transition-transform", collapsed && "rotate-180")} />

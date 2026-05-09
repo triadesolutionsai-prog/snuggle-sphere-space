@@ -32,7 +32,7 @@ export function Header() {
           <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
           <Input 
             placeholder="Busca global..." 
-            className="pl-9 w-64 bg-gray-50 dark:bg-slate-900 border-none focus-visible:ring-1 focus-visible:ring-[#D4AF37]" 
+            className="pl-9 w-64 bg-gray-50 dark:bg-slate-900 border-none focus-visible:ring-1 focus-visible:ring-gold" 
           />
           <div className="absolute right-3 top-1/2 -translate-y-1/2 flex items-center gap-1 px-1.5 py-0.5 rounded bg-gray-200 dark:bg-slate-800 text-[10px] text-gray-500 pointer-events-none">
             <Command className="w-2 h-2" />
@@ -46,14 +46,14 @@ export function Header() {
           variant="ghost" 
           size="icon" 
           onClick={() => dispatch({ type: 'TOGGLE_THEME' })}
-          className="text-gray-500 hover:text-[#D4AF37]"
+          className="text-gray-500 hover:text-gold"
         >
           {state.theme === 'light' ? <Moon className="w-5 h-5" /> : <Sun className="w-5 h-5" />}
         </Button>
 
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
-            <Button variant="ghost" size="icon" className="relative text-gray-500 hover:text-[#D4AF37]">
+            <Button variant="ghost" size="icon" className="relative text-gray-500 hover:text-gold">
               <Bell className="w-5 h-5" />
               <span className="absolute top-2 right-2 w-2 h-2 bg-red-500 rounded-full border-2 border-white dark:border-slate-950" />
             </Button>
@@ -65,7 +65,7 @@ export function Header() {
               <p>Nenhuma notificação nova</p>
             </div>
             <DropdownMenuSeparator />
-            <Button variant="ghost" className="w-full rounded-none text-xs text-[#D4AF37]">Ver todas</Button>
+            <Button variant="ghost" className="w-full rounded-none text-xs text-gold">Ver todas</Button>
           </DropdownMenuContent>
         </DropdownMenu>
       </div>
