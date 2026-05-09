@@ -9,11 +9,11 @@ export function AuthenticatedLayout({ children }: { children: React.ReactNode })
   const { state } = useApp();
 
   return (
-    <div className={cn("min-h-screen flex", state.theme === 'dark' ? 'dark' : '')}>
+    <div className="h-screen flex overflow-hidden">
       <Sidebar collapsed={collapsed} setCollapsed={setCollapsed} />
-      <div className="flex-1 flex flex-col bg-gray-50 dark:bg-slate-900 overflow-hidden">
+      <div className="flex-1 flex flex-col bg-gray-50 overflow-hidden">
         <Header />
-        <main className="flex-1 overflow-y-auto scrollbar-hide">
+        <main className="flex-1 overflow-y-auto">
           {children}
         </main>
       </div>
