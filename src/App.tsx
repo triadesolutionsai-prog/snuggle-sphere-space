@@ -3,6 +3,7 @@ import { AppProvider, useApp } from '@/context/AppContext';
 import LoginPage from '@/pages/LoginPage';
 import DashboardPage from '@/pages/DashboardPage';
 import PatientsPage from '@/pages/PatientsPage';
+import CRMPage from '@/pages/CRMPage';
 import { AuthenticatedLayout } from '@/components/AuthenticatedLayout';
 
 const ProtectedRoute = ({ children }: { children: React.ReactNode }) => {
@@ -28,7 +29,7 @@ export default function App() {
           <Route path="/dashboard" element={<ProtectedRoute><DashboardPage /></ProtectedRoute>} />
           
           {/* CRM */}
-          <Route path="/crm/funil" element={<ProtectedRoute><PlaceholderPage title="CRM — Funil de Vendas" /></ProtectedRoute>} />
+          <Route path="/crm/funil" element={<ProtectedRoute><CRMPage /></ProtectedRoute>} />
           <Route path="/crm/conversas" element={<ProtectedRoute><PlaceholderPage title="Conversas WhatsApp" /></ProtectedRoute>} />
           <Route path="/crm/templates" element={<ProtectedRoute><PlaceholderPage title="Templates de Mensagem" /></ProtectedRoute>} />
           <Route path="/crm/metricas" element={<ProtectedRoute><PlaceholderPage title="Métricas do CRM" /></ProtectedRoute>} />
@@ -54,3 +55,4 @@ export default function App() {
     </AppProvider>
   );
 }
+
