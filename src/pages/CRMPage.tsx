@@ -46,7 +46,7 @@ export default function CRMPage() {
           <p className="text-sm text-gray-500">Acompanhe a jornada dos seus pacientes potenciais.</p>
         </div>
         <div className="flex items-center gap-2">
-          <Button className="bg-[#D4AF37] hover:bg-[#B8962E] text-white">
+          <Button className="bg-gold hover:bg-gold/90 text-navy font-bold">
             <Plus className="w-4 h-4 mr-2" />
             Novo Lead
           </Button>
@@ -80,7 +80,7 @@ export default function CRMPage() {
                     {filteredLeads.filter(l => l.status === column).length}
                   </Badge>
                 </div>
-                <p className="text-[10px] font-bold text-[#D4AF37]">
+                <p className="text-[10px] font-bold text-gold">
                   R$ {getColumnTotal(column).toLocaleString('pt-BR')}
                 </p>
               </div>
@@ -92,7 +92,7 @@ export default function CRMPage() {
                     <Card key={lead.id} className="group border-none shadow-sm hover:shadow-md transition-all cursor-pointer">
                       <CardContent className="p-4 space-y-3">
                         <div className="flex justify-between items-start">
-                          <h4 className="font-bold text-sm group-hover:text-[#D4AF37] transition-colors">
+                          <h4 className="font-bold text-sm group-hover:text-gold transition-colors">
                             {patient?.name}
                           </h4>
                           <Button variant="ghost" size="icon" className="h-6 w-6 opacity-0 group-hover:opacity-100 transition-opacity">
@@ -111,10 +111,10 @@ export default function CRMPage() {
 
                         <div className="flex items-center gap-2 pt-2 border-t border-gray-50">
                           <div className="flex -space-x-1">
-                            <Button size="icon" variant="ghost" className="h-7 w-7 rounded-full bg-gray-50 hover:bg-[#D4AF37] hover:text-white transition-colors">
+                            <Button size="icon" variant="ghost" className="h-7 w-7 rounded-full bg-gray-50 hover:bg-gold hover:text-navy transition-colors">
                               <MessageSquare className="w-3 h-3" />
                             </Button>
-                            <Button size="icon" variant="ghost" className="h-7 w-7 rounded-full bg-gray-50 hover:bg-[#D4AF37] hover:text-white transition-colors">
+                            <Button size="icon" variant="ghost" className="h-7 w-7 rounded-full bg-gray-50 hover:bg-gold hover:text-navy transition-colors">
                               <Phone className="w-3 h-3" />
                             </Button>
                           </div>

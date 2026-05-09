@@ -51,7 +51,7 @@ export default function AgendaPage() {
             <Button variant="ghost" size="sm" className="bg-white shadow-sm text-xs px-3">Semana</Button>
             <Button variant="ghost" size="sm" className="text-xs px-3">Dia</Button>
           </div>
-          <Button className="bg-[#D4AF37] hover:bg-[#B8962E] text-white">
+          <Button className="bg-gold hover:bg-gold/90 text-navy font-bold">
             <Plus className="w-4 h-4 mr-2" />
             Novo Agendamento
           </Button>
@@ -67,14 +67,14 @@ export default function AgendaPage() {
             {weekDays.map(day => (
               <div key={day.toISOString()} className={cn(
                 "p-3 text-center space-y-1",
-                format(day, 'yyyy-MM-dd') === format(new Date(), 'yyyy-MM-dd') && "bg-[#D4AF37]/5"
+                format(day, 'yyyy-MM-dd') === format(new Date(), 'yyyy-MM-dd') && "bg-gold/5"
               )}>
                 <p className="text-[10px] uppercase font-bold text-gray-400 tracking-wider">
                   {format(day, 'EEE', { locale: ptBR })}
                 </p>
                 <p className={cn(
                   "text-lg font-bold",
-                  format(day, 'yyyy-MM-dd') === format(new Date(), 'yyyy-MM-dd') ? "text-[#D4AF37]" : "text-[#001F3F]"
+                  format(day, 'yyyy-MM-dd') === format(new Date(), 'yyyy-MM-dd') ? "text-gold" : "text-navy"
                 )}>
                   {format(day, 'dd')}
                 </p>
@@ -117,7 +117,7 @@ export default function AgendaPage() {
                         <div 
                           key={app.id}
                           className={cn(
-                            "absolute left-1 right-1 rounded-lg border p-2 shadow-sm cursor-pointer hover:ring-2 hover:ring-[#D4AF37] transition-all overflow-hidden",
+                            "absolute left-1 right-1 rounded-lg border p-2 shadow-sm cursor-pointer hover:ring-2 hover:ring-gold transition-all overflow-hidden",
                             app.status === 'Confirmado' ? "bg-green-50 border-green-100 text-green-900" :
                             app.status === 'Pendente' ? "bg-yellow-50 border-yellow-100 text-yellow-900" :
                             "bg-blue-50 border-blue-100 text-blue-900"

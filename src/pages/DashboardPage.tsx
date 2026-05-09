@@ -32,7 +32,7 @@ const KPICard = ({ title, value, icon: Icon, trend, trendValue, isPositive }: an
     <CardHeader className="flex flex-row items-center justify-between pb-2 space-y-0">
       <CardTitle className="text-sm font-medium text-gray-500">{title}</CardTitle>
       <div className="p-2 bg-[#F8F9FA] rounded-lg">
-        <Icon className="w-4 h-4 text-[#D4AF37]" />
+        <Icon className="w-4 h-4 text-gold" />
       </div>
     </CardHeader>
     <CardContent>
@@ -111,8 +111,8 @@ export default function DashboardPage() {
               <AreaChart data={revenueData}>
                 <defs>
                   <linearGradient id="colorValue" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="5%" stopColor="#D4AF37" stopOpacity={0.1}/>
-                    <stop offset="95%" stopColor="#D4AF37" stopOpacity={0}/>
+                    <stop offset="5%" stopColor="var(--brand-gold)" stopOpacity={0.1}/>
+                    <stop offset="95%" stopColor="var(--brand-gold)" stopOpacity={0}/>
                   </linearGradient>
                 </defs>
                 <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#f0f0f0" />
@@ -122,7 +122,7 @@ export default function DashboardPage() {
                   contentStyle={{ borderRadius: '8px', border: 'none', boxShadow: '0 4px 12px rgba(0,0,0,0.1)' }}
                   formatter={(value: any) => [`R$ ${value.toLocaleString('pt-BR')}`, 'Receita']}
                 />
-                <Area type="monotone" dataKey="value" stroke="#D4AF37" fillOpacity={1} fill="url(#colorValue)" strokeWidth={2} />
+                <Area type="monotone" dataKey="value" stroke="var(--brand-gold)" fillOpacity={1} fill="url(#colorValue)" strokeWidth={2} />
               </AreaChart>
             </ResponsiveContainer>
           </CardContent>
@@ -131,7 +131,7 @@ export default function DashboardPage() {
         <Card className="border-none shadow-sm">
           <CardHeader className="flex flex-row items-center justify-between">
             <CardTitle className="text-base font-semibold">Próximos Agendamentos</CardTitle>
-            <Button size="sm" variant="ghost" className="text-[#D4AF37] text-xs">Ver Agenda</Button>
+            <Button size="sm" variant="ghost" className="text-gold text-xs">Ver Agenda</Button>
           </CardHeader>
           <CardContent className="p-0">
             <div className="divide-y divide-gray-50">
@@ -140,7 +140,7 @@ export default function DashboardPage() {
                 return (
                   <div key={app.id} className="flex items-center justify-between p-4 hover:bg-gray-50/50 transition-colors">
                     <div className="flex items-center gap-3">
-                      <div className="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center font-bold text-[#001F3F]">
+                      <div className="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center font-bold text-navy">
                         {patient?.name.charAt(0)}
                       </div>
                       <div>
