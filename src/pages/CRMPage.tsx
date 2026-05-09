@@ -111,10 +111,10 @@ export default function CRMPage() {
 
                         <div className="flex items-center gap-2 pt-2 border-t border-gray-50">
                           <div className="flex -space-x-1">
-                            <Button size="icon" variant="ghost" className="h-7 w-7 rounded-full bg-gray-50 hover:bg-[#D4AF37] hover:text-white transition-colors">
+                            <Button size="icon" variant="ghost" className="h-7 w-7 rounded-full bg-gray-50 hover:bg-gold hover:text-navy transition-colors">
                               <MessageSquare className="w-3 h-3" />
                             </Button>
-                            <Button size="icon" variant="ghost" className="h-7 w-7 rounded-full bg-gray-50 hover:bg-[#D4AF37] hover:text-white transition-colors">
+                            <Button size="icon" variant="ghost" className="h-7 w-7 rounded-full bg-gray-50 hover:bg-gold hover:text-navy transition-colors">
                               <Phone className="w-3 h-3" />
                             </Button>
                           </div>

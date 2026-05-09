@@ -52,7 +52,7 @@ export default function PatientsPage() {
             <Download className="w-4 h-4 mr-2" />
             Exportar CSV
           </Button>
-          <Button className="bg-[#D4AF37] hover:bg-[#B8962E] text-white shadow-sm">
+          <Button className="bg-gold hover:bg-gold/90 text-navy font-bold shadow-sm">
             <UserPlus className="w-4 h-4 mr-2" />
             Novo Paciente
           </Button>
@@ -66,7 +66,7 @@ export default function PatientsPage() {
               <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
               <Input 
                 placeholder="Buscar por nome, CPF ou telefone..." 
-                className="pl-9 bg-gray-50 border-none shadow-none focus-visible:ring-1 focus-visible:ring-[#D4AF37]"
+                className="pl-9 bg-gray-50 border-none shadow-none focus-visible:ring-1 focus-visible:ring-gold"
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
               />
@@ -83,12 +83,12 @@ export default function PatientsPage() {
           <Table>
             <TableHeader className="bg-gray-50/50">
               <TableRow>
-                <TableHead className="font-bold text-[#001F3F]">Paciente</TableHead>
-                <TableHead className="font-bold text-[#001F3F]">Documento</TableHead>
-                <TableHead className="font-bold text-[#001F3F]">Contato</TableHead>
-                <TableHead className="font-bold text-[#001F3F]">Origem</TableHead>
-                <TableHead className="font-bold text-[#001F3F]">Status</TableHead>
-                <TableHead className="text-right font-bold text-[#001F3F]">Ações Rápidas</TableHead>
+                <TableHead className="font-bold text-navy">Paciente</TableHead>
+                <TableHead className="font-bold text-navy">Documento</TableHead>
+                <TableHead className="font-bold text-navy">Contato</TableHead>
+                <TableHead className="font-bold text-navy">Origem</TableHead>
+                <TableHead className="font-bold text-navy">Status</TableHead>
+                <TableHead className="text-right font-bold text-navy">Ações Rápidas</TableHead>
               </TableRow>
             </TableHeader>
             <TableBody>
