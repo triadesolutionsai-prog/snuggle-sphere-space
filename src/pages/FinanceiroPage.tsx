@@ -49,7 +49,7 @@ export default function FinanceiroPage() {
             <Download className="w-4 h-4 mr-2" />
             Fluxo de Caixa (PDF)
           </Button>
-          <Button className="bg-[#D4AF37] hover:bg-[#B8962E] text-white">
+          <Button className="bg-gold hover:bg-gold/90 text-navy font-bold">
             <Plus className="w-4 h-4 mr-2" />
             Lançar Transação
           </Button>
@@ -92,12 +92,12 @@ export default function FinanceiroPage() {
           </CardContent>
         </Card>
 
-        <Card className="border-none shadow-sm bg-[#001F3F] text-white">
+        <Card className="border-none shadow-sm bg-navy text-white">
           <CardHeader className="pb-2">
             <div className="flex justify-between items-center">
               <CardTitle className="text-sm font-medium text-blue-200">Saldo Previsto</CardTitle>
               <div className="p-1.5 bg-white/10 rounded-lg">
-                <DollarSign className="w-4 h-4 text-[#D4AF37]" />
+                <DollarSign className="w-4 h-4 text-gold" />
               </div>
             </div>
           </CardHeader>

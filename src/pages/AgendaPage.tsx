@@ -74,7 +74,7 @@ export default function AgendaPage() {
                 </p>
                 <p className={cn(
                   "text-lg font-bold",
-                  format(day, 'yyyy-MM-dd') === format(new Date(), 'yyyy-MM-dd') ? "text-[#D4AF37]" : "text-[#001F3F]"
+                  format(day, 'yyyy-MM-dd') === format(new Date(), 'yyyy-MM-dd') ? "text-gold" : "text-navy"
                 )}>
                   {format(day, 'dd')}
                 </p>
@@ -117,7 +117,7 @@ export default function AgendaPage() {
                         <div 
                           key={app.id}
                           className={cn(
-                            "absolute left-1 right-1 rounded-lg border p-2 shadow-sm cursor-pointer hover:ring-2 hover:ring-[#D4AF37] transition-all overflow-hidden",
+                            "absolute left-1 right-1 rounded-lg border p-2 shadow-sm cursor-pointer hover:ring-2 hover:ring-gold transition-all overflow-hidden",
                             app.status === 'Confirmado' ? "bg-green-50 border-green-100 text-green-900" :
                             app.status === 'Pendente' ? "bg-yellow-50 border-yellow-100 text-yellow-900" :
                             "bg-blue-50 border-blue-100 text-blue-900"
