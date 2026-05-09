@@ -75,7 +75,7 @@ export default function PatientsPage() {
               <Button variant="outline" size="sm">
                 <Filter className="w-4 h-4 mr-2" />
                 Filtros Avançados
-              </Badge>
+              </Button>
             </div>
           </div>
         </CardHeader>
