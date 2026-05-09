@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useReducer, ReactNode } from 'react';
+import React, { createContext, useContext, useEffect, useReducer, ReactNode } from 'react';
 import { 
   Patient, Lead, Appointment, Transaction, Product,
   INITIAL_PATIENTS, INITIAL_LEADS, INITIAL_APPOINTMENTS, INITIAL_TRANSACTIONS, INITIAL_PRODUCTS 
@@ -40,8 +40,14 @@ type AppAction =
   | { type: 'ADD_AUDIT_LOG'; payload: any };
 
 const initialState: AppState = {
-  user: null,
-  isAuthenticated: false,
+  user: {
+    id: '1',
+    name: 'Dr. Renato Marano',
+    email: 'renato@clinicarm.com.br',
+    role: 'Administrador',
+    avatar: 'https://images.unsplash.com/photo-1612349317150-e413f6a5b1f8?w=100&h=100&fit=crop',
+  },
+  isAuthenticated: true,
   theme: 'light',
   patients: INITIAL_PATIENTS,
   leads: INITIAL_LEADS,
@@ -106,6 +112,14 @@ const AppContext = createContext<{
 
 export const AppProvider = ({ children }: { children: ReactNode }) => {
   const [state, dispatch] = useReducer(appReducer, initialState);
+
+  useEffect(() => {
+    if (state.user) {
+      window.localStorage.setItem('clinica-rm-user', JSON.stringify(state.user));
+    } else {
+      window.localStorage.removeItem('clinica-rm-user');
+    }
+  }, [state.user]);
 
   return (
     <AppContext.Provider value={{ state, dispatch }}>
