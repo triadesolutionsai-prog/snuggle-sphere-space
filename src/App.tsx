@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import { AppProvider, useApp } from '@/context/AppContext';
 import LoginPage from '@/pages/LoginPage';
 import DashboardPage from '@/pages/DashboardPage';
+import PatientsPage from '@/pages/PatientsPage';
 import { AuthenticatedLayout } from '@/components/AuthenticatedLayout';
 
 const ProtectedRoute = ({ children }: { children: React.ReactNode }) => {
@@ -35,7 +36,7 @@ export default function App() {
           {/* Outras rotas */}
           <Route path="/agenda" element={<ProtectedRoute><PlaceholderPage title="Agenda" /></ProtectedRoute>} />
           <Route path="/agendamentos" element={<ProtectedRoute><PlaceholderPage title="Agendamentos" /></ProtectedRoute>} />
-          <Route path="/pacientes" element={<ProtectedRoute><PlaceholderPage title="Pacientes" /></ProtectedRoute>} />
+          <Route path="/pacientes" element={<ProtectedRoute><PatientsPage /></ProtectedRoute>} />
           <Route path="/prontuarios" element={<ProtectedRoute><PlaceholderPage title="Prontuários" /></ProtectedRoute>} />
           <Route path="/planos-tratamento" element={<ProtectedRoute><PlaceholderPage title="Planos de Tratamento" /></ProtectedRoute>} />
           <Route path="/estoque" element={<ProtectedRoute><PlaceholderPage title="Estoque" /></ProtectedRoute>} />
