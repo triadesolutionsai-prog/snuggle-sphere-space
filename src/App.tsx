@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { AppProvider, useApp } from '@/context/AppContext';
 import LoginPage from '@/pages/LoginPage';
@@ -21,6 +22,16 @@ const PlaceholderPage = ({ title }: { title: string }) => (
 );
 
 export default function App() {
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
+  if (!isClient) {
+    return <div className="min-h-screen bg-background" />;
+  }
+
   return (
     <AppProvider>
       <Router>
