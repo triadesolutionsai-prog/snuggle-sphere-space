@@ -51,7 +51,7 @@ export default function AgendaPage() {
             <Button variant="ghost" size="sm" className="bg-white shadow-sm text-xs px-3">Semana</Button>
             <Button variant="ghost" size="sm" className="text-xs px-3">Dia</Button>
           </div>
-          <Button className="bg-[#D4AF37] hover:bg-[#B8962E] text-white">
+          <Button className="bg-gold hover:bg-gold/90 text-navy font-bold">
             <Plus className="w-4 h-4 mr-2" />
             Novo Agendamento
           </Button>
@@ -67,7 +67,7 @@ export default function AgendaPage() {
             {weekDays.map(day => (
               <div key={day.toISOString()} className={cn(
                 "p-3 text-center space-y-1",
-                format(day, 'yyyy-MM-dd') === format(new Date(), 'yyyy-MM-dd') && "bg-[#D4AF37]/5"
+                format(day, 'yyyy-MM-dd') === format(new Date(), 'yyyy-MM-dd') && "bg-gold/5"
               )}>
                 <p className="text-[10px] uppercase font-bold text-gray-400 tracking-wider">
                   {format(day, 'EEE', { locale: ptBR })}

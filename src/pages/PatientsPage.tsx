@@ -96,11 +96,11 @@ export default function PatientsPage() {
                 <TableRow key={patient.id} className="hover:bg-gray-50/50 transition-colors cursor-pointer group">
                   <TableCell>
                     <div className="flex items-center gap-3">
-                      <div className="w-9 h-9 rounded-full bg-[#001F3F]/5 flex items-center justify-center font-bold text-[#001F3F] border border-[#001F3F]/10">
+                      <div className="w-9 h-9 rounded-full bg-navy/5 flex items-center justify-center font-bold text-navy border border-navy/10">
                         {patient.name.charAt(0)}
                       </div>
                       <div>
-                        <p className="font-semibold text-sm group-hover:text-[#D4AF37] transition-colors">{patient.name}</p>
+                        <p className="font-semibold text-sm group-hover:text-gold transition-colors">{patient.name}</p>
                         <p className="text-[10px] text-gray-500 uppercase tracking-wider">{patient.birthDate}</p>
                       </div>
                     </div>
@@ -171,7 +171,7 @@ export default function PatientsPage() {
                         <p className="font-medium">Nenhum paciente encontrado</p>
                         <p className="text-sm text-gray-500">Ajuste sua busca ou cadastre um novo paciente.</p>
                       </div>
-                      <Button variant="outline" className="mt-2 text-[#D4AF37] border-[#D4AF37] hover:bg-[#D4AF37] hover:text-white">
+                      <Button variant="outline" className="mt-2 text-gold border-gold hover:bg-gold hover:text-navy">
                         Limpar Filtros
                       </Button>
                     </div>
