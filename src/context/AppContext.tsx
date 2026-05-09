@@ -1,4 +1,8 @@
 import React, { createContext, useContext, useReducer, ReactNode } from 'react';
+import { 
+  Patient, Lead, Appointment, Transaction, Product,
+  INITIAL_PATIENTS, INITIAL_LEADS, INITIAL_APPOINTMENTS, INITIAL_TRANSACTIONS, INITIAL_PRODUCTS 
+} from '@/lib/mock-data';
 
 export type UserRole = 'Administrador' | 'Clínico' | 'Assistente' | 'Recepção' | 'Financeiro';
 
@@ -14,38 +18,36 @@ interface AppState {
   user: User | null;
   isAuthenticated: boolean;
   theme: 'light' | 'dark';
-  // CRM
-  leads: any[];
-  // Agenda
-  appointments: any[];
-  // Patients
-  patients: any[];
-  // Inventory
-  products: any[];
-  // Finance
-  transactions: any[];
-  // Audit Log
+  patients: Patient[];
+  leads: Lead[];
+  appointments: Appointment[];
+  transactions: Transaction[];
+  products: Product[];
   auditLog: any[];
 }
 
 type AppAction =
   | { type: 'SET_USER'; payload: User | null }
   | { type: 'TOGGLE_THEME' }
-  | { type: 'ADD_LEAD'; payload: any }
-  | { type: 'UPDATE_LEAD'; payload: any }
-  | { type: 'ADD_PATIENT'; payload: any }
-  | { type: 'ADD_APPOINTMENT'; payload: any }
+  | { type: 'ADD_PATIENT'; payload: Patient }
+  | { type: 'UPDATE_PATIENT'; payload: Patient }
+  | { type: 'DELETE_PATIENT'; payload: string }
+  | { type: 'ADD_LEAD'; payload: Lead }
+  | { type: 'UPDATE_LEAD_STATUS'; payload: { id: string; status: Lead['status'] } }
+  | { type: 'ADD_APPOINTMENT'; payload: Appointment }
+  | { type: 'UPDATE_APPOINTMENT'; payload: Appointment }
+  | { type: 'ADD_TRANSACTION'; payload: Transaction }
   | { type: 'ADD_AUDIT_LOG'; payload: any };
 
 const initialState: AppState = {
   user: null,
   isAuthenticated: false,
   theme: 'light',
-  leads: [],
-  appointments: [],
-  patients: [],
-  products: [],
-  transactions: [],
+  patients: INITIAL_PATIENTS,
+  leads: INITIAL_LEADS,
+  appointments: INITIAL_APPOINTMENTS,
+  transactions: INITIAL_TRANSACTIONS,
+  products: INITIAL_PRODUCTS,
   auditLog: [],
 };
 
@@ -62,12 +64,36 @@ function appReducer(state: AppState, action: AppAction): AppState {
         ...state, 
         theme: state.theme === 'light' ? 'dark' : 'light' 
       };
+    case 'ADD_PATIENT':
+      return { ...state, patients: [...state.patients, action.payload] };
+    case 'UPDATE_PATIENT':
+      return {
+        ...state,
+        patients: state.patients.map(p => p.id === action.payload.id ? action.payload : p)
+      };
+    case 'DELETE_PATIENT':
+      return { ...state, patients: state.patients.filter(p => p.id !== action.payload) };
+    case 'ADD_LEAD':
+      return { ...state, leads: [...state.leads, action.payload] };
+    case 'UPDATE_LEAD_STATUS':
+      return {
+        ...state,
+        leads: state.leads.map(l => l.id === action.payload.id ? { ...l, status: action.payload.status } : l)
+      };
+    case 'ADD_APPOINTMENT':
+      return { ...state, appointments: [...state.appointments, action.payload] };
+    case 'UPDATE_APPOINTMENT':
+      return {
+        ...state,
+        appointments: state.appointments.map(a => a.id === action.payload.id ? action.payload : a)
+      };
+    case 'ADD_TRANSACTION':
+      return { ...state, transactions: [action.payload, ...state.transactions] };
     case 'ADD_AUDIT_LOG':
       return {
         ...state,
         auditLog: [action.payload, ...state.auditLog],
       };
-    // Add other cases as needed
     default:
       return state;
   }
