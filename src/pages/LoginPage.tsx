@@ -76,7 +76,7 @@ export default function LoginPage() {
               <div className="space-y-4">
                 <div className="space-y-2">
                   <Label htmlFor="email">Email</Label>
-                  <Input id="email" type="email" placeholder="nome@exemplo.com" required />
+                  <Input id="email" type="email" placeholder="nome@exemplo.com" />
                 </div>
                 <div className="space-y-2">
                   <div className="flex items-center justify-between">
@@ -85,7 +85,7 @@ export default function LoginPage() {
                       Esqueci minha senha
                     </Button>
                   </div>
-                  <Input id="password" type="password" required />
+                  <Input id="password" type="password" />
                 </div>
                 <div className="space-y-2">
                   <Label>Entrar como:</Label>
